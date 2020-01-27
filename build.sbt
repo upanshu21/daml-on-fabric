@@ -6,7 +6,6 @@ ThisBuild / organization := "com.hacera"
 ThisBuild / organizationName := "HACERA"
 
 lazy val sdkVersion = "100.13.41"
-lazy val jacksonVersion = "2.9.8"
 
 // This task is used by the integration test to detect which version of Ledger API Test Tool to use.
 val printSdkVersion = taskKey[Unit]("printSdkVersion")
@@ -49,7 +48,7 @@ lazy val root = (project in file("."))
       "com.typesafe.akka" %% "akka-slf4j" % "2.5.22",
 
       // Protobuf / grpc
-      "com.google.protobuf" % "protobuf-java-util" % "3.7.1", //  in current setup: need to ALWAYS use the same version as fabric-sdk-java
+      "com.google.protobuf" % "protobuf-java-util" % "3.10.0", //  in current setup: need to ALWAYS use the same version as fabric-sdk-java
 
       // Logging and monitoring
       "org.slf4j" % "slf4j-api" % "1.7.25",
@@ -57,7 +56,7 @@ lazy val root = (project in file("."))
       "ch.qos.logback" % "logback-classic" % "1.2.3",
 
       // fabric
-      "org.hyperledger.fabric-sdk-java" % "fabric-sdk-java" % "1.4.1",
+      "org.hyperledger.fabric-sdk-java" % "fabric-sdk-java" % "1.4.6",
       "org.jodd" % "jodd-json" % "5.0.12",
 
     ),
