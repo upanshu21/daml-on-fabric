@@ -8,8 +8,8 @@ echo "Detecting current DAML SDK version used in the SBT build..."
 echo "Detected SDK version is $sdkVersion"
 
 echo "Downloading DAML Integration kit Ledger API Test Tool version ${sdkVersion}..."
-bintrayTestToolPath="https://bintray.com/api/v1/content/digitalassetsdk/DigitalAssetSDK/com/daml/ledger/testtool/ledger-api-test-tool/"
-curl -L "${bintrayTestToolPath}${sdkVersion}/ledger-api-test-tool-${sdkVersion}.jar?bt_package=sdk-components" \
+repoTestToolPath="https://repo.maven.apache.org/maven2/com/daml/ledger/testtool/ledger-api-test-tool/"
+curl -L "${repoTestToolPath}${sdkVersion}/ledger-api-test-tool-${sdkVersion}.jar?bt_package=sdk-components" \
      -o ledger-api-test-tool.jar
 
 echo "Extracting the .dar file to load in DAML-on-Fabric server..."

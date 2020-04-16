@@ -62,5 +62,4 @@ lazy val root = (project in file("."))
 
     ),
     resolvers += Resolver.mavenLocal,
-    resolvers += "Digital Asset SDK" at "https://digitalassetsdk.bintray.com/DigitalAssetSDK",
   )
