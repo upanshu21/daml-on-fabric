@@ -103,14 +103,21 @@ $ cd ~/daml-on-fabric/
 $ sbt "run --port 6865 --role provision,time,ledger,explorer ../quickstart/.daml/dist/quickstart-0.0.1.dar"
 ```
 
-### Step 4. Run DAML Navigator
+### Step 4. Allocate Party to the ledger
+
+```
+$ cd ~/daml-on-fabric/
+$ DAML_SDK_VERSION=0.13.41 daml ledger allocate-parties PARTY --host localhost --port 6865
+```
+
+### Step 5. Run DAML Navigator
 
 ```
 $ cd ~/quickstart/
 daml navigator server localhost 6865 --port 4000
 ```
 
-### Step 5. Conclusion
+### Step 6. Conclusion
 
 Now you can explore your freshly setup DAML ledger.
 
@@ -124,7 +131,7 @@ More information on Quick Start example and DAML in general can be found here:
 
 https://docs.daml.com/getting-started/quickstart.html
 
-### Step 6.  Running a Multi-node Setup
+### Step 7.  Running a Multi-node Setup
 ## Start Fabric Network
 - `cd src/test/fixture && ./restart_fabric.sh`
 
@@ -144,3 +151,4 @@ https://docs.daml.com/getting-started/quickstart.html
 - `java -jar ledger-api-test-tool.jar localhost:11111 --include=SemanticTests --timeout-scale-factor 2.0`
 - `java -jar ledger-api-test-tool.jar localhost:12222 --include=SemanticTests --timeout-scale-factor 2.0`
 - `java -jar ledger-api-test-tool.jar localhost:13333 --include=SemanticTests --timeout-scale-factor 2.0`
+
